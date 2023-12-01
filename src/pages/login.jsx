@@ -6,6 +6,9 @@ function Login() {
    const handleClick = () => {
        navigate('/home');
    }
+   const hookClick = () => {
+    navigate('/AllProduct');
+   }
 
    return (
        <>
@@ -14,6 +17,9 @@ function Login() {
            <button onClick={handleClick}>
                Connexion
            </button>
+           <div>
+            <button onClick={hookClick}>Admin</button>
+           </div>
        </>
    );
 }

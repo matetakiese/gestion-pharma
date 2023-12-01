@@ -9,6 +9,12 @@ import About from './pages/about.jsx'
 import Products from './pages/products.jsx'
 import ProductsList from './pages/productsList.jsx'
 import SingleProduct from './pages/singleProduct.jsx'
+import DashboardLayout from './dashboard-layout/dashboard-layout.jsx'
+import CreateProduct from './pages-dashboards/create-product.jsx'
+import DeleteProduct from './pages-dashboards/delete-product.jsx'
+import UpdateProduct from './pages-dashboards/update-product.jsx'
+import AllProducts from './pages-dashboards/all-products.jsx'
+
 
 const router = createBrowserRouter([
   {
@@ -43,7 +49,41 @@ const router = createBrowserRouter([
       },
     ],
   },
-]);
+
+  {
+    path: "/",
+    element: <DashboardLayout />,
+    children: [
+      {
+        path: "/AllProduct",
+        element: <AllProducts />,
+      },
+      {
+        path: "/CreateProduct",
+        element: <CreateProduct />,
+      },
+      {
+        path: "/DeleteProduct",
+        element: <DeleteProduct />,
+      },
+      {
+        path: "/UpdateProduct",
+        element: <UpdateProduct />,
+      },
+    ],
+  },
+]
+);
+
+
+
+
+
+
+
+
+ 
+
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
